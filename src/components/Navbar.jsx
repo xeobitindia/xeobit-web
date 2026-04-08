@@ -23,18 +23,18 @@ export default function Navbar() {
         <span className={styles.logoText}>XEO<em>BIT</em></span>
       </Link>
 
-      <ul className={`${styles.links} ${menuOpen ? styles.open : ''}`}>
+      <ul className={`${styles.links} ${menuOpen ? styles.open : styles.close}`}>
         <li><Link to="/" className={location.pathname === '/' ? styles.active : ''}>Home</Link></li>
         <li><Link to="/xeobit" className={location.pathname === '/xeobit' ? styles.active : ''}>Product</Link></li>
-        <li><a href="/#features">Features</a></li>
-        <li><a href="/#how">How it works</a></li>
+        <li><a href="/#features" onClick={()=>setMenuOpen(false)}>Features</a></li>
+        <li><a href="/#how" onClick={()=>setMenuOpen(true)}>How it works</a></li>
       </ul>
 
       <a href="/#waitlist" className={styles.cta}>Get early access</a>
 
       <button
         className={styles.burger}
-        onClick={() => setMenuOpen(o => !o)}
+        onClick={()=>setMenuOpen(o=>!o)}
         aria-label="Toggle menu"
       >
         <span /><span /><span />

@@ -103,6 +103,9 @@
   border-radius: 2px;
   transition: 0.3s;
 }
+.close{
+  opacity: 0;
+}
 
 @media (max-width: 860px) {
   .links {
