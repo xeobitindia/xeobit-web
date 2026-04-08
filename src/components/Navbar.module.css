@@ -1,0 +1,130 @@
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.1rem 6%;
+  background: var(--bg);
+  transition: box-shadow 0.3s, background 0.3s;
+}
+
+.scrolled {
+  box-shadow: 0 1px 0 var(--border), var(--shadow-sm);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.logoImg {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.logoText {
+  font-family: var(--mono);
+  font-size: 1.35rem;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+  font-style: normal;
+}
+
+.logoText em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 2.2rem;
+  list-style: none;
+}
+
+.links a {
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+  font-weight: 400;
+  transition: color 0.2s;
+  position: relative;
+}
+
+.links a:hover,
+.links a.active {
+  color: var(--ink);
+}
+
+.links a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0; right: 0;
+  height: 1.5px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+.cta {
+  background: var(--ink);
+  color: #fff;
+  padding: 0.5rem 1.25rem;
+  border-radius: var(--radius);
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: background 0.2s, transform 0.15s;
+  white-space: nowrap;
+}
+
+.cta:hover {
+  background: var(--accent);
+  transform: translateY(-1px);
+}
+
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  padding: 4px;
+}
+
+.burger span {
+  display: block;
+  width: 22px;
+  height: 1.5px;
+  background: var(--ink);
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+@media (max-width: 860px) {
+  .links {
+    position: fixed;
+    top: 62px; left: 0; right: 0;
+    background: var(--bg);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.5rem 6%;
+    gap: 1.2rem;
+    border-bottom: 1px solid var(--border);
+    transform: translateY(-110%);
+    transition: transform 0.3s ease;
+    z-index: 99;
+  }
+  .links.open {
+    transform: translateY(0);
+  }
+  .burger {
+    display: flex;
+  }
+  .cta {
+    display: none;
+  }
+}

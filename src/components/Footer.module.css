@@ -1,0 +1,86 @@
+.footer {
+  background: var(--ink);
+  color: rgba(247, 244, 240, 0.45);
+  font-size: 0.85rem;
+}
+
+.inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 3rem;
+  padding: 3.5rem 6% 2.5rem;
+  flex-wrap: wrap;
+}
+
+.brand p {
+  margin-top: 0.5rem;
+  font-size: 0.82rem;
+  color: rgba(247, 244, 240, 0.4);
+  font-weight: 300;
+}
+
+.logo {
+  font-family: var(--mono);
+  font-size: 1.3rem;
+  color: #f7f4f0;
+  font-style: normal;
+}
+
+.logo em {
+  font-style: italic;
+  color: #f0a882;
+}
+
+.links {
+  display: flex;
+  gap: 4rem;
+  flex-wrap: wrap;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.colTitle {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(247, 244, 240, 0.6);
+  margin-bottom: 0.2rem;
+}
+
+.col a {
+  color: rgba(247, 244, 240, 0.4);
+  transition: color 0.2s;
+  font-size: 0.85rem;
+}
+
+.col a:hover {
+  color: #f7f4f0;
+}
+
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.2rem 6%;
+  border-top: 1px solid rgba(255,255,255,0.07);
+  font-size: 0.78rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+@media (max-width: 640px) {
+  .inner {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .bottom {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}

@@ -1,0 +1,408 @@
+.page {
+  min-height: 100vh;
+}
+
+/* Fade in animation */
+.fade {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.fadeIn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── HERO ── */
+.hero {
+  padding: 9rem 6% 5rem;
+  background: linear-gradient(180deg, var(--bg) 0%, var(--bg-card) 100%);
+  border-bottom: 1px solid var(--border);
+}
+
+.heroInner {
+  max-width: 680px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.productBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 0.4rem 0.9rem;
+  border-radius: 99px;
+  margin-bottom: 1.8rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.productIcon {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.productBadge span {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--ink-soft);
+  letter-spacing: 0.04em;
+}
+
+.hero h1 {
+  font-family: var(--serif);
+  font-size: clamp(2.8rem, 5vw, 4.2rem);
+  line-height: 1.06;
+  letter-spacing: -0.015em;
+  margin-bottom: 1.3rem;
+}
+
+.hero h1 em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.heroSub {
+  font-size: 1.02rem;
+  color: var(--ink-soft);
+  font-weight: 300;
+  line-height: 1.75;
+  max-width: 520px;
+  margin: 0 auto 2.2rem;
+}
+
+.heroActions {
+  display: flex;
+  gap: 1.2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btnPrimary {
+  display: inline-block;
+  background: var(--ink);
+  color: #fff;
+  padding: 0.82rem 1.8rem;
+  border-radius: var(--radius);
+  font-size: 0.92rem;
+  font-weight: 500;
+  transition: background 0.2s, transform 0.15s;
+}
+.btnPrimary:hover {
+  background: var(--accent);
+  transform: translateY(-1px);
+}
+
+.btnGhost {
+  display: inline-block;
+  color: var(--ink-soft);
+  font-size: 0.88rem;
+  padding: 0.82rem 0;
+  transition: color 0.2s;
+}
+.btnGhost:hover { color: var(--ink); }
+
+/* ── MAIN SCREENSHOT ── */
+.mainScreenshot {
+  padding: 4rem 6%;
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--border);
+}
+
+.screenshotWrap {
+  max-width: 1000px;
+  margin: 0 auto;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border);
+}
+
+.screenshotBar {
+  background: #f0ede6;
+  padding: 0.7rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.screenshotTitle {
+  font-size: 0.78rem;
+  color: var(--ink-faint);
+  margin-left: 0.5rem;
+  font-weight: 400;
+}
+
+.screenshotImg {
+  width: 100%;
+  display: block;
+}
+
+/* ── SIGN IN SECTION ── */
+.signInSection {
+  padding: 6rem 6%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.signInGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.label {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.signInText h2 {
+  font-family: var(--serif);
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+
+.signInText p {
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  font-weight: 300;
+  line-height: 1.75;
+  margin-bottom: 1.8rem;
+}
+
+.signInPoints {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.signInPoints li {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+}
+
+.tick {
+  color: var(--accent);
+  font-weight: 600;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.signInImgWrap {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border);
+}
+
+.signInImg {
+  width: 100%;
+  display: block;
+}
+
+/* ── SPECS ── */
+.specsSection {
+  padding: 5rem 6%;
+  background: var(--bg-card);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.specsSection h2 {
+  font-family: var(--serif);
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  margin-bottom: 2.5rem;
+}
+
+.specsGrid {
+  max-width: 680px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.specRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.95rem 1.4rem;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.88rem;
+}
+
+.specRow:last-child { border-bottom: none; }
+.specRow:nth-child(even) { background: var(--bg); }
+
+.specLabel { color: var(--ink-soft); font-weight: 400; }
+.specValue { font-weight: 500; color: var(--ink); }
+
+/* ── ROADMAP ── */
+.roadmapSection {
+  background: var(--ink);
+  padding: 7rem 6%;
+}
+
+.roadmapInner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.labelLight {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #f0a882;
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.titleLight {
+  font-family: var(--serif);
+  font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+  color: #f7f4f0;
+  margin-bottom: 3rem;
+}
+
+.roadmapGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.roadmapCard {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius-lg);
+  padding: 1.6rem 1.5rem;
+  transition: background 0.2s;
+}
+
+.roadmapCard:hover {
+  background: rgba(255,255,255,0.07);
+}
+
+.roadmapHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.2rem;
+}
+
+.phaseLabel {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  color: #f7f4f0;
+}
+
+.phaseBadge {
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.6rem;
+  border-radius: 99px;
+}
+
+.live {
+  background: rgba(40, 201, 65, 0.15);
+  color: #6ee68a;
+}
+
+.soon {
+  background: rgba(196, 82, 42, 0.2);
+  color: #f0a882;
+}
+
+.planned {
+  background: rgba(255,255,255,0.08);
+  color: rgba(247,244,240,0.4);
+}
+
+.roadmapItems {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.roadmapItems li {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.84rem;
+  color: rgba(247,244,240,0.55);
+}
+
+.phaseDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.liveDot { background: #28c941; }
+.soonDot { background: #c4522a; }
+.plannedDot { background: rgba(255,255,255,0.2); }
+
+/* ── CTA ── */
+.ctaSection {
+  background: var(--accent);
+  padding: 6rem 6%;
+  text-align: center;
+}
+
+.ctaSection h2 {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: #fff;
+  margin-bottom: 0.9rem;
+}
+
+.ctaSection p {
+  color: rgba(255,255,255,0.75);
+  font-size: 1rem;
+  font-weight: 300;
+  margin-bottom: 2rem;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 860px) {
+  .signInGrid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .roadmapGrid {
+    grid-template-columns: 1fr;
+  }
+  .mainScreenshot,
+  .signInSection,
+  .specsSection,
+  .roadmapSection,
+  .ctaSection {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+}
