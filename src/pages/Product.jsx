@@ -34,11 +34,11 @@ function Fade({ children, delay = 0, className = '' }) {
 
 const SPECS = [
   { label: 'Platform', value: 'macOS · Windows' },
-  { label: 'Gmail access', value: 'Read-only OAuth 2.0' },
+  { label: 'Google Calendar access', value: 'Read-only OAuth 2.0' },
   { label: 'Supported platforms', value: 'Zoom · Google Meet · Teams' },
   { label: 'Data storage', value: 'None — fully local' },
   { label: 'Current version', value: '1.0.0 (Beta)' },
-  { label: 'Upcoming', value: 'AI transcription · Summaries' },
+  { label: 'Upcoming', value: 'Meeting transcription · Summaries' },
 ]
 
 export default function Product() {
