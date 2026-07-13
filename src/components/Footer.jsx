@@ -14,7 +14,7 @@ export default function Footer() {
         <div className={styles.links}>
           <div className={styles.col}>
             <span className={styles.colTitle}>Product</span>
-            <Link to="/xeobit">XEOBIT Connect AI</Link>
+            <Link to="/xeobit">XEOBIT Connect</Link>
             <a href="/#features">Features</a>
             <a href="/#how">How it works</a>
           </div>

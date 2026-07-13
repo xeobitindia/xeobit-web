@@ -149,7 +149,7 @@ export default function Home() {
       </section>
 
       {/* COMING SOON */}
-      <section className={styles.soonSection}>
+      {/* <section className={styles.soonSection}>
         <Section>
           <div className={styles.soonGrid}>
             <div>
@@ -196,7 +196,7 @@ export default function Home() {
             </div>
           </div>
         </Section>
-      </section>
+      </section> */}
 
       {/* WAITLIST CTA */}
       <section className={styles.ctaSection} id="waitlist">
