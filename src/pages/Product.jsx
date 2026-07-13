@@ -51,7 +51,7 @@ export default function Product() {
           <Fade>
             <div className={styles.productBadge}>
               <img src={icon} alt="XEOBIT" className={styles.productIcon} />
-              <span>XEOBIT Connect AI</span>
+              <span>XEOBIT Connect</span>
             </div>
           </Fade>
           <Fade delay={0.1}>
@@ -97,7 +97,7 @@ export default function Product() {
               <ul className={styles.signInPoints}>
                 <li>
                   <span className={styles.tick}>✓</span>
-                  <span>Read-only Gmail access — we can never modify your inbox</span>
+                  <span>Read-only Google Calendar access — we can never modify your inbox</span>
                 </li>
                 <li>
                   <span className={styles.tick}>✓</span>
@@ -145,7 +145,7 @@ export default function Product() {
             <div className={styles.roadmapGrid}>
               {[
                 { phase: 'Now', status: 'live', items: ['Gmail meeting detection', 'Zoom · Meet · Teams links', 'Desktop app (Mac + Windows)', 'Secure OAuth login'] },
-                { phase: 'Next', status: 'soon', items: ['AI meeting transcription', 'Auto-generated summaries', 'Action item extraction', 'Smart pre-meeting reminders'] },
+                { phase: 'Next', status: 'soon', items: ['Meeting transcription', 'Auto-generated summaries', 'Action item extraction', 'Smart pre-meeting reminders'] },
                 { phase: 'Later', status: 'planned', items: ['Multi-account support', 'Calendar integrations', 'Team dashboards', 'Mobile companion app'] },
               ].map((phase, i) => (
                 <Fade key={phase.phase} delay={i * 0.1}>
