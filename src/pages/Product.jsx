@@ -4,6 +4,7 @@ import screenshotDashboard from '../assets/screenshot-dashboard.png'
 import screenshotLogin from '../assets/screenshot-login.png'
 import icon from '../assets/icon.png'
 import styles from './Product.module.css'
+import URL from '../BASE_URL'
 
 function useInView() {
   const ref = useRef(null)
@@ -42,6 +43,12 @@ const SPECS = [
 ]
 
 export default function Product() {
+  const downloadFile = () => {
+  window.open(
+    URL,
+    "_blank"
+  );
+}
   return (
     <main className={styles.page}>
 
@@ -174,8 +181,8 @@ export default function Product() {
       <section className={styles.ctaSection}>
         <Fade>
           <h2>Ready to get started?</h2>
-          <p>Join the waitlist for early access and be the first to try the AI features.</p>
-          <a href="/#waitlist" className={styles.btnPrimary}>Join the waitlist</a>
+          <p>Download The Demo application.</p>
+          <span onClick={downloadFile} className={styles.btnPrimary}>Download</span>
         </Fade>
       </section>
     </main>

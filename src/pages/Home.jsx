@@ -4,6 +4,7 @@ import screenshotDashboard from '../assets/screenshot-dashboard.png'
 import screenshotDashboard2 from '../assets/dashboard.png'
 import screenshotLogin from '../assets/screenshot-login.png'
 import styles from './Home.module.css'
+import URL from '../BASE_URL'
 
 function useInView(threshold = 0.15) {
   const ref = useRef(null)
@@ -47,10 +48,12 @@ export default function Home() {
   const [email, setEmail] = useState('')
   const [submitted, setSubmitted] = useState(false)
 
-  const handleWaitlist = (e) => {
-    e.preventDefault()
-    if (email) setSubmitted(true)
-  }
+  const downloadFile = () => {
+  window.open(
+    URL,
+    "_blank"
+  );
+};
 
   return (
     <main>
@@ -202,21 +205,22 @@ export default function Home() {
       <section className={styles.ctaSection} id="waitlist">
         <Section>
           <h2>Be the first to know</h2>
-          <p>Join the waitlist and get early access when the AI features launch.</p>
+          {/* <h2>Ready to get started?</h2> */}
+          <p>Download The Demo application.</p>
           {submitted ? (
             <div className={styles.successMsg}>
-              ✓ You're on the list — we'll be in touch soon.
+              ✓ You're download will start soon.
             </div>
           ) : (
-            <form className={styles.ctaForm} onSubmit={handleWaitlist}>
-              <input
+            <form className={styles.ctaForm} onSubmit={downloadFile}>
+              {/* <input
                 type="email"
                 placeholder="your@email.com"
                 value={email}
                 onChange={e => setEmail(e.target.value)}
                 required
-              />
-              <button type="submit">Join waitlist</button>
+              /> */}
+              <button type="submit">Download</button>
             </form>
           )}
         </Section>
