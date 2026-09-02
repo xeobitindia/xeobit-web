@@ -4,6 +4,7 @@ import screenshotDashboard from '../assets/screenshot-dashboard.png'
 import screenshotDashboard2 from '../assets/dashboard.png'
 import screenshotLogin from '../assets/screenshot-login.png'
 import styles from './Home.module.css'
+import URL from '../BASE_URL'
 
 function useInView(threshold = 0.15) {
   const ref = useRef(null)
@@ -47,10 +48,12 @@ export default function Home() {
   const [email, setEmail] = useState('')
   const [submitted, setSubmitted] = useState(false)
 
-  const handleWaitlist = (e) => {
-    e.preventDefault()
-    if (email) setSubmitted(true)
-  }
+  const downloadFile = () => {
+  window.open(
+    URL,
+    "_blank"
+  );
+};
 
   return (
     <main>
@@ -62,13 +65,23 @@ export default function Home() {
               <span className={styles.eyebrowDot} />
               Now available for Gmail
             </div>
-            <h1>All your meetings,<br /><em>one clear view.</em></h1>
+            <h1>
+              All your meetings,
+              <br />
+              <em>one clear view.</em>
+            </h1>
             <p className={styles.heroSub}>
-              XEOBIT pulls every meeting invite from your Gmail and surfaces them in a clean, unified dashboard — so nothing slips through the cracks.
+              XEOBIT pulls every meeting invite from your Gmail and surfaces
+              them in a clean, unified dashboard — so nothing slips through the
+              cracks.
             </p>
             <div className={styles.heroActions}>
-              <Link to="/xeobit" className={styles.btnPrimary}>See the product</Link>
-              <a href="#how" className={styles.btnGhost}>How it works →</a>
+              <Link to="/xeobit" className={styles.btnPrimary}>
+                See the product
+              </Link>
+              <a href="#how" className={styles.btnGhost}>
+                How it works →
+              </a>
             </div>
           </div>
 
@@ -87,13 +100,21 @@ export default function Home() {
       <section className={styles.featuresSection} id="features">
         <Section>
           <p className={styles.sectionLabel}>Why XEOBIT</p>
-          <h2 className={styles.sectionTitle}>Built for teams that move fast</h2>
-          <p className={styles.sectionSub}>Small businesses don't need another bloated calendar tool. XEOBIT is focused, fast, and does one thing really well.</p>
+          <h2 className={styles.sectionTitle}>
+            Built for teams that move fast
+          </h2>
+          <p className={styles.sectionSub}>
+            Small businesses don't need another bloated calendar tool. XEOBIT is
+            focused, fast, and does one thing really well.
+          </p>
         </Section>
         <div className={styles.featuresGrid}>
           {FEATURES.map((f, i) => (
             <Section key={f.title}>
-              <div className={styles.featureCard} style={{ animationDelay: `${i * 0.06}s` }}>
+              <div
+                className={styles.featureCard}
+                style={{ animationDelay: `${i * 0.06}s` }}
+              >
                 <div className={styles.featureIcon}>{f.icon}</div>
                 <h3>{f.title}</h3>
                 <p>{f.desc}</p>
@@ -108,20 +129,35 @@ export default function Home() {
         <Section>
           <p className={styles.sectionLabel}>The product</p>
           <h2 className={styles.sectionTitle}>See it in action</h2>
-          <p className={styles.sectionSub}>A clean, no-nonsense interface built for busy professionals who just want to know what's next.</p>
+          <p className={styles.sectionSub}>
+            A clean, no-nonsense interface built for busy professionals who just
+            want to know what's next.
+          </p>
         </Section>
         <Section className={styles.screenshotsGrid}>
           <div className={styles.screenshotCard}>
             <div className={styles.screenshotLabel}>Dashboard view</div>
-            <img src={screenshotDashboard} alt="XEOBIT dashboard showing today's meetings" className={styles.screenshotFull} />
+            <img
+              src={screenshotDashboard}
+              alt="XEOBIT dashboard showing today's meetings"
+              className={styles.screenshotFull}
+            />
           </div>
           <div className={styles.screenshotCard}>
             <div className={styles.screenshotLabel}>Dashboard view</div>
-            <img src={screenshotDashboard2} alt="XEOBIT dashboard showing today's meetings" className={styles.screenshotFull} />
+            <img
+              src={screenshotDashboard2}
+              alt="XEOBIT dashboard showing today's meetings"
+              className={styles.screenshotFull}
+            />
           </div>
           <div className={styles.screenshotCard}>
             <div className={styles.screenshotLabel}>Sign-in screen</div>
-            <img src={screenshotLogin} alt="XEOBIT sign in screen" className={styles.screenshotFull} />
+            <img
+              src={screenshotLogin}
+              alt="XEOBIT sign in screen"
+              className={styles.screenshotFull}
+            />
           </div>
         </Section>
       </section>
@@ -130,14 +166,25 @@ export default function Home() {
       <section className={styles.howSection} id="how">
         <div className={styles.howInner}>
           <Section>
-            <p className={`${styles.sectionLabel} ${styles.labelLight}`}>How it works</p>
-            <h2 className={`${styles.sectionTitle} ${styles.titleLight}`}>Up and running<br />in minutes</h2>
-            <p className={`${styles.sectionSub} ${styles.subLight}`}>Three steps. No configuration needed after setup.</p>
+            <p className={`${styles.sectionLabel} ${styles.labelLight}`}>
+              How it works
+            </p>
+            <h2 className={`${styles.sectionTitle} ${styles.titleLight}`}>
+              Up and running
+              <br />
+              in minutes
+            </h2>
+            <p className={`${styles.sectionSub} ${styles.subLight}`}>
+              Three steps. No configuration needed after setup.
+            </p>
           </Section>
           <div className={styles.steps}>
             {STEPS.map((s, i) => (
               <Section key={s.num}>
-                <div className={styles.step} style={{ transitionDelay: `${i * 0.1}s` }}>
+                <div
+                  className={styles.step}
+                  style={{ transitionDelay: `${i * 0.1}s` }}
+                >
                   <div className={styles.stepNum}>{s.num}</div>
                   <h3>{s.title}</h3>
                   <p>{s.desc}</p>
@@ -202,25 +249,25 @@ export default function Home() {
       <section className={styles.ctaSection} id="waitlist">
         <Section>
           <h2>Be the first to know</h2>
-          <p>Join the waitlist and get early access when the AI features launch.</p>
+          <p>Try the app yourself — download it now and explore</p>
           {submitted ? (
             <div className={styles.successMsg}>
-              ✓ You're on the list — we'll be in touch soon.
+              ✓ You're download will start soon.
             </div>
           ) : (
-            <form className={styles.ctaForm} onSubmit={handleWaitlist}>
-              <input
+            <form className={styles.ctaForm} onSubmit={downloadFile}>
+              {/* <input
                 type="email"
                 placeholder="your@email.com"
                 value={email}
                 onChange={e => setEmail(e.target.value)}
                 required
-              />
-              <button type="submit">Join waitlist</button>
+              /> */}
+              <button type="submit">Download Now</button>
             </form>
           )}
         </Section>
       </section>
     </main>
-  )
+  );
 }
