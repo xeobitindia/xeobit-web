@@ -38,7 +38,7 @@ const SPECS = [
   { label: 'Google Calendar access', value: 'Read-only OAuth 2.0' },
   { label: 'Supported platforms', value: 'Zoom · Google Meet · Teams' },
   { label: 'Data storage', value: 'None — fully local' },
-  { label: 'Current version', value: '1.0.0 (Beta)' },
+  { label: 'Current version', value: '1.0.3' },
   { label: 'Upcoming', value: 'Meeting transcription · Summaries' },
 ]
 
@@ -49,6 +49,18 @@ export default function Product() {
     "_blank"
   );
 }
+useEffect(() => {
+  if (window.location.hash === "#download") {
+    const element = document.getElementById("download");
+
+    if (element) {
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  }
+}, []);
   return (
     <main className={styles.page}>
 
@@ -71,7 +83,7 @@ export default function Product() {
           </Fade>
           <Fade delay={0.3}>
             <div className={styles.heroActions}>
-              <a href="/#waitlist" className={styles.btnPrimary}>Get early access</a>
+              <a href="/xeobit/#download" className={styles.btnPrimary}>Get early access</a>
               <Link to="/" className={styles.btnGhost}>← Back to home</Link>
             </div>
           </Fade>
@@ -178,7 +190,7 @@ export default function Product() {
       </section>
 
       {/* CTA */}
-      <section className={styles.ctaSection}>
+      <section className={styles.ctaSection} id="download">
         <Fade>
           <h2>Ready to get started?</h2>
           <p>Download The Demo application.</p>

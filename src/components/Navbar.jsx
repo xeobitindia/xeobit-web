@@ -30,7 +30,7 @@ export default function Navbar() {
         <li><a href="/#how" onClick={()=>setMenuOpen(true)}>How it works</a></li>
       </ul>
 
-      <a href="/#waitlist" className={styles.cta}>Get early access</a>
+      <a href={location.pathname.includes('xeobit')?'/xeobit/#download':'/#waitlist'} className={styles.cta}>Get early access</a>
 
       <button
         className={styles.burger}
