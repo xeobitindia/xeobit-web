@@ -9,7 +9,7 @@ export default function Footer() {
           <span className={styles.logo}>
             XEO<em>BIT</em>
           </span>
-          <p>Your meeting command center.</p>
+          <p>Software Solutions.</p>
         </div>
         <div className={styles.links}>
           <div className={styles.col}>
