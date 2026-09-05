@@ -112,7 +112,7 @@ useEffect(() => {
             <div className={styles.signInText}>
               <span className={styles.label}>Getting started</span>
               <h2>One click to connect</h2>
-              <p>Sign in with your Google account and XEOBIT immediately begins scanning your inbox for meeting invites. The whole process takes under a minute.</p>
+              <p>Sign in with your Google account and XEOBIT immediately begins scanning your Calendar for meeting invites. The whole process takes under a minute.</p>
               <ul className={styles.signInPoints}>
                 <li>
                   <span className={styles.tick}>✓</span>
