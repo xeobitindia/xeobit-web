@@ -466,6 +466,7 @@
 
 .ctaForm {
   display: flex;
+  flex-direction: column;
   gap: 0.7rem;
   justify-content: center;
   flex-wrap: wrap;

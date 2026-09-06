@@ -4,7 +4,7 @@ import screenshotDashboard from '../assets/screenshot-dashboard.png'
 import screenshotDashboard2 from '../assets/dashboard.png'
 import screenshotLogin from '../assets/screenshot-login.png'
 import styles from './Home.module.css'
-import URL from '../BASE_URL'
+import config from '../BASE_URL'
 
 function useInView(threshold = 0.15) {
   const ref = useRef(null)
@@ -46,11 +46,32 @@ const STEPS = [
 
 export default function Home() {
   const [email, setEmail] = useState('')
+  const [name, setName] = useState('')
+  const [company, setCompany] = useState('')
+  const [phone, setPhone] = useState('')
   const [submitted, setSubmitted] = useState(false)
 
-  const downloadFile = () => {
+  const downloadFile = async(e) => {
+    e.preventDefault()
+    try {
+      const res = await fetch(config.MAIL_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          company,
+          phone,
+        }),
+      });
+    } catch (error) {
+      console.log(error)
+    }
+    setSubmitted(true);
   window.open(
-    URL,
+    config.URL,
     "_blank"
   );
 };
@@ -252,17 +273,36 @@ export default function Home() {
           <p>Try the app yourself — download it now and explore</p>
           {submitted ? (
             <div className={styles.successMsg}>
-              ✓ You're download will start soon.
+              ✓ You're download will start soon. Our team will soon provide you with the activation key
             </div>
           ) : (
             <form className={styles.ctaForm} onSubmit={downloadFile}>
-              {/* <input
+              <input
+                type="name"
+                placeholder="John Doe"
+                value={name}
+                onChange={e => setName(e.target.value)}
+                required
+                />
+              <input
                 type="email"
                 placeholder="your@email.com"
                 value={email}
                 onChange={e => setEmail(e.target.value)}
                 required
-              /> */}
+                />
+              <input
+                type="company"
+                placeholder="Company Name"
+                value={company}
+                onChange={e => setCompany(e.target.value)}
+                />
+              <input
+                type="phone"
+                placeholder="Phone Number"
+                value={phone}
+                onChange={e => setPhone(e.target.value)}
+                />
               <button type="submit">Download Now</button>
             </form>
           )}
