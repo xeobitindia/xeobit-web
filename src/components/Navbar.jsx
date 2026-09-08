@@ -30,7 +30,7 @@ export default function Navbar() {
         <li><a href="/#how" onClick={()=>setMenuOpen(true)}>How it works</a></li>
       </ul>
 
-      { (location.pathname.includes('home') || location.pathname.includes('xeobit'))&&<a href={location.pathname.includes('xeobit')?'/xeobit/#download':'/#waitlist'} className={styles.cta}>Get early access</a>}
+      {!location.pathname.includes('xeobit')&&<a href={'/#waitlist'} className={styles.cta}>Get early access</a>}
 
       <button
         className={styles.burger}

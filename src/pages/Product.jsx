@@ -83,7 +83,7 @@ useEffect(() => {
           </Fade>
           <Fade delay={0.3}>
             <div className={styles.heroActions}>
-              <a href="/xeobit/#download" className={styles.btnPrimary}>Get early access</a>
+              {/* <a href="/#download" className={styles.btnPrimary}>Get early access</a> */}
               <Link to="/" className={styles.btnGhost}>← Back to home</Link>
             </div>
           </Fade>
@@ -112,7 +112,7 @@ useEffect(() => {
             <div className={styles.signInText}>
               <span className={styles.label}>Getting started</span>
               <h2>One click to connect</h2>
-              <p>Sign in with your Google account and XEOBIT immediately begins scanning your inbox for meeting invites. The whole process takes under a minute.</p>
+              <p>Sign in with your Google account and XEOBIT immediately begins scanning your Calendar for meeting invites. The whole process takes under a minute.</p>
               <ul className={styles.signInPoints}>
                 <li>
                   <span className={styles.tick}>✓</span>
@@ -190,13 +190,13 @@ useEffect(() => {
       </section>
 
       {/* CTA */}
-      <section className={styles.ctaSection} id="download">
+      {/* <section className={styles.ctaSection} id="download">
         <Fade>
           <h2>Ready to get started?</h2>
           <p>Download The Demo application.</p>
           <span onClick={downloadFile} className={styles.btnPrimary}>Download</span>
         </Fade>
-      </section>
+      </section> */}
     </main>
   )
 }

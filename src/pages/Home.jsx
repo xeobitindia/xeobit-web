@@ -4,7 +4,7 @@ import screenshotDashboard from '../assets/screenshot-dashboard.png'
 import screenshotDashboard2 from '../assets/dashboard.png'
 import screenshotLogin from '../assets/screenshot-login.png'
 import styles from './Home.module.css'
-import URL from '../BASE_URL'
+import config from '../BASE_URL'
 
 function useInView(threshold = 0.15) {
   const ref = useRef(null)
@@ -30,27 +30,48 @@ function Section({ children, className = '' }) {
 }
 
 const FEATURES = [
-  { icon: '📥', title: 'Auto-detected invites', desc: 'Connects to Gmail and automatically pulls every meeting invite — no manual entry, no missed events.' },
+  { icon: '📥', title: 'Auto-detected invites', desc: 'Connects to Google Calendar and automatically pulls every meeting invite — no manual entry, no missed events.' },
   { icon: '🗂️', title: 'Unified timeline', desc: 'Today, this week, upcoming — all in one dashboard. Filter by date, platform, or organiser in seconds.' },
-  { icon: '🔒', title: 'Read-only & private', desc: 'XEOBIT only reads your Gmail. It never modifies, stores, or shares your email data with anyone.' },
+  { icon: '🔒', title: 'Read-only & private', desc: 'XEOBIT only reads your Google Calendar. It never modifies, stores, or shares your email data with anyone.' },
   { icon: '⚡', title: 'Instant overview', desc: 'Open the app and know your full day in under five seconds. No digging through threads.' },
   { icon: '🖥️', title: 'Desktop-native', desc: 'A lightweight desktop app — always accessible, no tab hunting, no browser fatigue.' },
-  { icon: '🔗', title: 'Any platform', desc: 'Google Meet, Zoom, Teams — XEOBIT detects meeting links across all platforms automatically.' },
+  { icon: '🔗', title: 'Any platform', desc: 'Google Meet, Teams, Webex — XEOBIT detects meeting links across all platforms automatically.' },
 ]
 
 const STEPS = [
-  { num: '1', title: 'Connect your Gmail', desc: 'Sign in with Google — a one-time OAuth flow. XEOBIT only requests read-only access to your inbox.' },
-  { num: '2', title: 'XEOBIT scans your inbox', desc: 'The app automatically identifies and organises all meeting invites, extracting times, links, and attendees.' },
+  { num: '1', title: 'Connect your Gmail', desc: 'Sign in with Google — a one-time OAuth flow. XEOBIT only requests read-only access to your calendar.' },
+  { num: '2', title: 'XEOBIT scans your calendar', desc: 'The app automatically identifies and organises all meeting invites, extracting times, links, and attendees.' },
   { num: '3', title: 'See your day clearly', desc: 'Your unified meeting dashboard is ready. Always up to date with your latest invites.' },
 ]
 
 export default function Home() {
   const [email, setEmail] = useState('')
+  const [name, setName] = useState('')
+  const [company, setCompany] = useState('')
+  const [phone, setPhone] = useState('')
   const [submitted, setSubmitted] = useState(false)
 
-  const downloadFile = () => {
+  const downloadFile = async(e) => {
+    e.preventDefault()
+    try {
+      const res = await fetch(config.MAIL_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          company,
+          phone,
+        }),
+      });
+    } catch (error) {
+      console.log(error)
+    }
+    setSubmitted(true);
   window.open(
-    URL,
+    config.URL,
     "_blank"
   );
 };
@@ -71,7 +92,7 @@ export default function Home() {
               <em>one clear view.</em>
             </h1>
             <p className={styles.heroSub}>
-              XEOBIT pulls every meeting invite from your Gmail and surfaces
+              XEOBIT pulls every meeting invite from your Google Calendar and surfaces
               them in a clean, unified dashboard — so nothing slips through the
               cracks.
             </p>
@@ -252,17 +273,36 @@ export default function Home() {
           <p>Try the app yourself — download it now and explore</p>
           {submitted ? (
             <div className={styles.successMsg}>
-              ✓ You're download will start soon.
+              ✓ You're download will start soon. Our team will soon provide you with the activation key
             </div>
           ) : (
             <form className={styles.ctaForm} onSubmit={downloadFile}>
-              {/* <input
+              <input
+                type="name"
+                placeholder="John Doe"
+                value={name}
+                onChange={e => setName(e.target.value)}
+                required
+                />
+              <input
                 type="email"
                 placeholder="your@email.com"
                 value={email}
                 onChange={e => setEmail(e.target.value)}
                 required
-              /> */}
+                />
+              <input
+                type="company"
+                placeholder="Company Name"
+                value={company}
+                onChange={e => setCompany(e.target.value)}
+                />
+              <input
+                type="phone"
+                placeholder="Phone Number"
+                value={phone}
+                onChange={e => setPhone(e.target.value)}
+                />
               <button type="submit">Download Now</button>
             </form>
           )}
