@@ -15,6 +15,18 @@ export default function Navbar() {
   }, [])
 
   useEffect(() => setMenuOpen(false), [location])
+  useEffect(() => {
+    if (window.location.hash === "#waitlist") {
+      const element = document.getElementById("waitlist");
+
+      if (element) {
+        element.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+    }
+  }, []);
 
   return (
     <nav className={`${styles.nav} ${scrolled ? styles.scrolled : ''}`}>
@@ -24,13 +36,15 @@ export default function Navbar() {
       </Link>
 
       <ul className={`${styles.links} ${menuOpen ? styles.open : styles.close}`}>
-        <li><Link to="/" className={location.pathname === '/' ? styles.active : ''}>Home</Link></li>
-        <li><Link to="/xeobit" className={location.pathname === '/xeobit' ? styles.active : ''}>Product</Link></li>
-        <li><a href="/#features" onClick={()=>setMenuOpen(false)}>Features</a></li>
-        <li><a href="/#how" onClick={()=>setMenuOpen(true)}>How it works</a></li>
+        <li><Link to="/" className={location.pathname === '/' ? styles.active : ''}>LMS</Link></li>
+        <li><Link to="/dashboard" className={location.pathname.includes('/dashboard') ? styles.active : ''}>Meetings Dashboard</Link></li>
+        {/* <li><a href="/#features" onClick={()=>setMenuOpen(false)}>Features</a></li>
+        <li><a href="/#how" onClick={()=>setMenuOpen(true)}>How it works</a></li> */}
       </ul>
 
-      {!location.pathname.includes('xeobit')&&<a href={'/#waitlist'} className={styles.cta}>Get early access</a>}
+      {/* {!location.pathname.includes('xeobit')&& */}
+      <a href={'/dashboard/#waitlist'} className={styles.cta}>Get early access</a>
+      
 
       <button
         className={styles.burger}

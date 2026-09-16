@@ -45,6 +45,7 @@
   align-items: center;
   gap: 2.2rem;
   list-style: none;
+  
 }
 
 .links a {
@@ -104,7 +105,7 @@
   transition: 0.3s;
 }
 .close{
-  opacity: 0;
+  opacity: 100;
 }
 
 @media (max-width: 860px) {

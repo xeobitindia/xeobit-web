@@ -11,7 +11,7 @@ export default function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<LandingPage />} />
-        <Route path="/home" element={<Home />} />
+        <Route path="/dashboard" element={<Home />} />
         <Route path="/xeobit" element={<Product />} />
       </Routes>
       <Footer />
