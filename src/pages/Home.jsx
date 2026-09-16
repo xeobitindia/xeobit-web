@@ -82,9 +82,13 @@ export default function Home() {
       <section className={styles.hero}>
         <div className={styles.heroInner}>
           <div className={styles.heroContent}>
-            <div className={styles.eyebrow}>
+            {/* <div className={styles.eyebrow}>
               <span className={styles.eyebrowDot} />
               Now available for Gmail
+            </div> */}
+            <div className={styles.eyebrowAI} onClick={()=>{window.open("https://lectureai.xeobitindia.in/", "_blank");}}>
+              <span className={styles.eyebrowDotAI} />
+              Learn with Xeobit AI <span className={styles.knowmore}>know more </span>
             </div>
             <h1>
               All your meetings,
