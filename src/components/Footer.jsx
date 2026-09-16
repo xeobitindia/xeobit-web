@@ -14,7 +14,7 @@ export default function Footer() {
         <div className={styles.links}>
           <div className={styles.col}>
             <span className={styles.colTitle}>Product</span>
-            <Link to="/xeobit">XEOBIT Connect</Link>
+            <a href="https://lectureai.xeobitindia.in/">XEOBIT AI</a>
             <a href="/#features">Features</a>
             <a href="/#how">How it works</a>
           </div>
@@ -31,7 +31,9 @@ export default function Footer() {
         </div>
       </div>
       <div className={styles.bottom}>
-        <span>© {new Date().getFullYear()} XEOBIT India. All rights reserved.</span>
+        <span>
+          © {new Date().getFullYear()} XEOBIT India. All rights reserved.
+        </span>
         <span>Built for Efficiency.</span>
       </div>
     </footer>
