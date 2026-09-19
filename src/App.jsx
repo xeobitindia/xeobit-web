@@ -3,13 +3,15 @@ import Navbar from './components/Navbar.jsx'
 import Footer from './components/Footer.jsx'
 import Home from './pages/Home.jsx'
 import Product from './pages/Product.jsx'
+import Landing from './pages/Landing.jsx'
 
 export default function App() {
   return (
     <>
-      <Navbar />
+      
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Landing/>}/>
+        <Route path="/home" element={<Home />} />
         <Route path="/xeobit" element={<Product />} />
       </Routes>
       <Footer />

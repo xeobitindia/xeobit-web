@@ -5,6 +5,7 @@ import screenshotDashboard2 from '../assets/dashboard.png'
 import screenshotLogin from '../assets/screenshot-login.png'
 import styles from './Home.module.css'
 import config from '../BASE_URL'
+import Navbar from '../components/Navbar'
 
 function useInView(threshold = 0.15) {
   const ref = useRef(null)
@@ -77,151 +78,159 @@ export default function Home() {
 };
 
   return (
-    <main>
-      {/* HERO */}
-      <section className={styles.hero}>
-        <div className={styles.heroInner}>
-          <div className={styles.heroContent}>
-            {/* <div className={styles.eyebrow}>
+    <>
+    <Navbar />
+      <main>
+        {/* HERO */}
+        <section className={styles.hero}>
+          <div className={styles.heroInner}>
+            <div className={styles.heroContent}>
+              {/* <div className={styles.eyebrow}>
               <span className={styles.eyebrowDot} />
               Now available for Gmail
             </div> */}
-            <div className={styles.eyebrowAI} onClick={()=>{window.open("https://lectureai.xeobitindia.in/", "_blank");}}>
-              <span className={styles.eyebrowDotAI} />
-              Learn with Xeobit AI <span className={styles.knowmore}>know more </span>
-            </div>
-            <h1>
-              All your meetings,
-              <br />
-              <em>one clear view.</em>
-            </h1>
-            <p className={styles.heroSub}>
-              XEOBIT pulls every meeting invite from your Google Calendar and surfaces
-              them in a clean, unified dashboard — so nothing slips through the
-              cracks.
-            </p>
-            <div className={styles.heroActions}>
-              <Link to="/xeobit" className={styles.btnPrimary}>
-                See the product
-              </Link>
-              <a href="#how" className={styles.btnGhost}>
-                How it works →
-              </a>
-            </div>
-          </div>
-
-          <div className={styles.heroScreenshots}>
-            <div className={styles.screenshotMain}>
-              <img src={screenshotDashboard} alt="XEOBIT dashboard" />
-            </div>
-            <div className={styles.screenshotSub}>
-              <img src={screenshotLogin} alt="XEOBIT sign in" />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* FEATURES */}
-      <section className={styles.featuresSection} id="features">
-        <Section>
-          <p className={styles.sectionLabel}>Why XEOBIT</p>
-          <h2 className={styles.sectionTitle}>
-            Built for teams that move fast
-          </h2>
-          <p className={styles.sectionSub}>
-            Small businesses don't need another bloated calendar tool. XEOBIT is
-            focused, fast, and does one thing really well.
-          </p>
-        </Section>
-        <div className={styles.featuresGrid}>
-          {FEATURES.map((f, i) => (
-            <Section key={f.title}>
               <div
-                className={styles.featureCard}
-                style={{ animationDelay: `${i * 0.06}s` }}
+                className={styles.eyebrowAI}
+                onClick={() => {
+                  window.open("https://lectureai.xeobitindia.in/", "_blank");
+                }}
               >
-                <div className={styles.featureIcon}>{f.icon}</div>
-                <h3>{f.title}</h3>
-                <p>{f.desc}</p>
+                <span className={styles.eyebrowDotAI} />
+                Learn with Xeobit AI{" "}
+                <span className={styles.knowmore}>know more </span>
               </div>
-            </Section>
-          ))}
-        </div>
-      </section>
+              <h1>
+                All your meetings,
+                <br />
+                <em>one clear view.</em>
+              </h1>
+              <p className={styles.heroSub}>
+                XEOBIT pulls every meeting invite from your Google Calendar and
+                surfaces them in a clean, unified dashboard — so nothing slips
+                through the cracks.
+              </p>
+              <div className={styles.heroActions}>
+                <Link to="/xeobit" className={styles.btnPrimary}>
+                  See the product
+                </Link>
+                <a href="#how" className={styles.btnGhost}>
+                  How it works →
+                </a>
+              </div>
+            </div>
 
-      {/* SCREENSHOTS */}
-      <section className={styles.screenshotsSection}>
-        <Section>
-          <p className={styles.sectionLabel}>The product</p>
-          <h2 className={styles.sectionTitle}>See it in action</h2>
-          <p className={styles.sectionSub}>
-            A clean, no-nonsense interface built for busy professionals who just
-            want to know what's next.
-          </p>
-        </Section>
-        <Section className={styles.screenshotsGrid}>
-          <div className={styles.screenshotCard}>
-            <div className={styles.screenshotLabel}>Dashboard view</div>
-            <img
-              src={screenshotDashboard}
-              alt="XEOBIT dashboard showing today's meetings"
-              className={styles.screenshotFull}
-            />
+            <div className={styles.heroScreenshots}>
+              <div className={styles.screenshotMain}>
+                <img src={screenshotDashboard} alt="XEOBIT dashboard" />
+              </div>
+              <div className={styles.screenshotSub}>
+                <img src={screenshotLogin} alt="XEOBIT sign in" />
+              </div>
+            </div>
           </div>
-          <div className={styles.screenshotCard}>
-            <div className={styles.screenshotLabel}>Dashboard view</div>
-            <img
-              src={screenshotDashboard2}
-              alt="XEOBIT dashboard showing today's meetings"
-              className={styles.screenshotFull}
-            />
-          </div>
-          <div className={styles.screenshotCard}>
-            <div className={styles.screenshotLabel}>Sign-in screen</div>
-            <img
-              src={screenshotLogin}
-              alt="XEOBIT sign in screen"
-              className={styles.screenshotFull}
-            />
-          </div>
-        </Section>
-      </section>
+        </section>
 
-      {/* HOW IT WORKS */}
-      <section className={styles.howSection} id="how">
-        <div className={styles.howInner}>
+        {/* FEATURES */}
+        <section className={styles.featuresSection} id="features">
           <Section>
-            <p className={`${styles.sectionLabel} ${styles.labelLight}`}>
-              How it works
-            </p>
-            <h2 className={`${styles.sectionTitle} ${styles.titleLight}`}>
-              Up and running
-              <br />
-              in minutes
+            <p className={styles.sectionLabel}>Why XEOBIT</p>
+            <h2 className={styles.sectionTitle}>
+              Built for teams that move fast
             </h2>
-            <p className={`${styles.sectionSub} ${styles.subLight}`}>
-              Three steps. No configuration needed after setup.
+            <p className={styles.sectionSub}>
+              Small businesses don't need another bloated calendar tool. XEOBIT
+              is focused, fast, and does one thing really well.
             </p>
           </Section>
-          <div className={styles.steps}>
-            {STEPS.map((s, i) => (
-              <Section key={s.num}>
+          <div className={styles.featuresGrid}>
+            {FEATURES.map((f, i) => (
+              <Section key={f.title}>
                 <div
-                  className={styles.step}
-                  style={{ transitionDelay: `${i * 0.1}s` }}
+                  className={styles.featureCard}
+                  style={{ animationDelay: `${i * 0.06}s` }}
                 >
-                  <div className={styles.stepNum}>{s.num}</div>
-                  <h3>{s.title}</h3>
-                  <p>{s.desc}</p>
+                  <div className={styles.featureIcon}>{f.icon}</div>
+                  <h3>{f.title}</h3>
+                  <p>{f.desc}</p>
                 </div>
               </Section>
             ))}
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* COMING SOON */}
-      {/* <section className={styles.soonSection}>
+        {/* SCREENSHOTS */}
+        <section className={styles.screenshotsSection}>
+          <Section>
+            <p className={styles.sectionLabel}>The product</p>
+            <h2 className={styles.sectionTitle}>See it in action</h2>
+            <p className={styles.sectionSub}>
+              A clean, no-nonsense interface built for busy professionals who
+              just want to know what's next.
+            </p>
+          </Section>
+          <Section className={styles.screenshotsGrid}>
+            <div className={styles.screenshotCard}>
+              <div className={styles.screenshotLabel}>Dashboard view</div>
+              <img
+                src={screenshotDashboard}
+                alt="XEOBIT dashboard showing today's meetings"
+                className={styles.screenshotFull}
+              />
+            </div>
+            <div className={styles.screenshotCard}>
+              <div className={styles.screenshotLabel}>Dashboard view</div>
+              <img
+                src={screenshotDashboard2}
+                alt="XEOBIT dashboard showing today's meetings"
+                className={styles.screenshotFull}
+              />
+            </div>
+            <div className={styles.screenshotCard}>
+              <div className={styles.screenshotLabel}>Sign-in screen</div>
+              <img
+                src={screenshotLogin}
+                alt="XEOBIT sign in screen"
+                className={styles.screenshotFull}
+              />
+            </div>
+          </Section>
+        </section>
+
+        {/* HOW IT WORKS */}
+        <section className={styles.howSection} id="how">
+          <div className={styles.howInner}>
+            <Section>
+              <p className={`${styles.sectionLabel} ${styles.labelLight}`}>
+                How it works
+              </p>
+              <h2 className={`${styles.sectionTitle} ${styles.titleLight}`}>
+                Up and running
+                <br />
+                in minutes
+              </h2>
+              <p className={`${styles.sectionSub} ${styles.subLight}`}>
+                Three steps. No configuration needed after setup.
+              </p>
+            </Section>
+            <div className={styles.steps}>
+              {STEPS.map((s, i) => (
+                <Section key={s.num}>
+                  <div
+                    className={styles.step}
+                    style={{ transitionDelay: `${i * 0.1}s` }}
+                  >
+                    <div className={styles.stepNum}>{s.num}</div>
+                    <h3>{s.title}</h3>
+                    <p>{s.desc}</p>
+                  </div>
+                </Section>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* COMING SOON */}
+        {/* <section className={styles.soonSection}>
         <Section>
           <div className={styles.soonGrid}>
             <div>
@@ -270,48 +279,50 @@ export default function Home() {
         </Section>
       </section> */}
 
-      {/* WAITLIST CTA */}
-      <section className={styles.ctaSection} id="waitlist">
-        <Section>
-          <h2>Be the first to know</h2>
-          <p>Try the app yourself — download it now and explore</p>
-          {submitted ? (
-            <div className={styles.successMsg}>
-              ✓ You're download will start soon. Our team will soon provide you with the activation key
-            </div>
-          ) : (
-            <form className={styles.ctaForm} onSubmit={downloadFile}>
-              <input
-                type="name"
-                placeholder="John Doe"
-                value={name}
-                onChange={e => setName(e.target.value)}
-                required
+        {/* WAITLIST CTA */}
+        <section className={styles.ctaSection} id="waitlist">
+          <Section>
+            <h2>Be the first to know</h2>
+            <p>Try the app yourself — download it now and explore</p>
+            {submitted ? (
+              <div className={styles.successMsg}>
+                ✓ You're download will start soon. Our team will soon provide
+                you with the activation key
+              </div>
+            ) : (
+              <form className={styles.ctaForm} onSubmit={downloadFile}>
+                <input
+                  type="name"
+                  placeholder="John Doe"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  required
                 />
-              <input
-                type="email"
-                placeholder="your@email.com"
-                value={email}
-                onChange={e => setEmail(e.target.value)}
-                required
+                <input
+                  type="email"
+                  placeholder="your@email.com"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
                 />
-              <input
-                type="company"
-                placeholder="Company Name"
-                value={company}
-                onChange={e => setCompany(e.target.value)}
+                <input
+                  type="company"
+                  placeholder="Company Name"
+                  value={company}
+                  onChange={(e) => setCompany(e.target.value)}
                 />
-              <input
-                type="phone"
-                placeholder="Phone Number"
-                value={phone}
-                onChange={e => setPhone(e.target.value)}
+                <input
+                  type="phone"
+                  placeholder="Phone Number"
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
                 />
-              <button type="submit">Download Now</button>
-            </form>
-          )}
-        </Section>
-      </section>
-    </main>
+                <button type="submit">Download Now</button>
+              </form>
+            )}
+          </Section>
+        </section>
+      </main>
+    </>
   );
 }
