@@ -105,7 +105,7 @@ export default function Home() {
                 <em>one clear view.</em>
               </h1>
               <p className={styles.heroSub}>
-                XEOBIT pulls every meeting invite from your Google Calendar and
+                XEOBIT Connect pulls every meeting invite from your Google Calendar and
                 surfaces them in a clean, unified dashboard — so nothing slips
                 through the cracks.
               </p>
