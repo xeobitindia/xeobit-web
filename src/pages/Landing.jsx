@@ -25,9 +25,9 @@ const Landing = () => {
         </h1>
 
         <p className="mt-6 max-w-2xl text-base md:text-lg text-(--ink-soft)">
-          Xeobit builds AI-powered solutions that connect people, platforms, and
-          AV hardware, from unified meeting environments to interactive learning
-          experiences.
+          Xeobit builds Intelligent solutions that connect people, platforms,
+          and AV hardware, from unified meeting environments to interactive
+          learning experiences.
         </p>
 
         <a
