@@ -1,7 +1,7 @@
 import React from "react";
 import Logo from "../components/Logo";
-import dashboard from "../assets/screenshot-dashboard.png"
-import learningAi from "../assets/learning-ai.png"
+import dashboard from "../assets/Connect_logo.png"
+import learningAi from "../assets/Xeobit_campus_connect.jpeg";
 import { useNavigate } from "react-router-dom";
 
 const Landing = () => {
@@ -30,7 +30,10 @@ const Landing = () => {
           experiences.
         </p>
 
-        <a className="mt-8 px-6 py-3 bg-(--accent) text-white! rounded-lg font-semibold" href="/#products">
+        <a
+          className="mt-8 px-6 py-3 bg-(--accent) text-white! rounded-lg font-semibold"
+          href="/#products"
+        >
           Explore Products
         </a>
       </section>
@@ -63,7 +66,7 @@ const Landing = () => {
                 </p>
 
                 <h3 className="mt-2 text-2xl font-serif font-bold">
-                  Xeobit Meeting Dashboard
+                  Xeobit Connect
                 </h3>
 
                 <p className="mt-3 text-(--ink-soft)">
@@ -99,12 +102,19 @@ const Landing = () => {
                 </p>
 
                 <h3 className="mt-2 text-2xl font-serif font-bold">
-                  Xeobit Lecture AI
+                  Xeobit Campus Connect
                 </h3>
 
                 <p className="mt-3 text-(--ink-soft)">
                   Turn uploaded lectures and learning material into interactive
                   experiences with AI-generated questions.
+                </p>
+                <p className="text-(--ink-soft) font-bold">
+                  For enquiry -{" "}
+                  <span className="text-(--accent) underline">
+                    {" "}
+                    info@xeobitindia.in{" "}
+                  </span>
                 </p>
 
                 <button
@@ -121,14 +131,14 @@ const Landing = () => {
             <article className="md:col-span-2 md:w-1/2 md:justify-self-center bg-(--bg-card) rounded-lg overflow-hidden shadow-sm">
               <div className="relative aspect-video bg-(--accent-light) overflow-hidden">
                 <img
-                  src={learningAi}
+                  src="https://ecare.demoquaeretech.in/brand/ecare-logo.png"
                   alt="Healthcare AI"
-                  className="w-full h-full object-cover blur-md scale-105"
+                  className="w-auto scale-50 hover:scale-45 duration-300"
                 />
 
-                <span className="absolute inset-0 flex items-center justify-center text-white text-xl font-semibold bg-black/20">
+                {/* <span className="absolute inset-0 flex items-center justify-center text-white text-xl font-semibold bg-black/20">
                   Comming Soon
-                </span>
+                </span> */}
               </div>
 
               <div className="p-8">
@@ -144,9 +154,14 @@ const Landing = () => {
                   Connecting health care through intellegent AV
                 </p>
 
-                {/* <button className="mt-6 text-(--accent) font-semibold">
+                <button
+                  className="mt-6 text-(--accent) font-semibold"
+                  onClick={() => {
+                    window.open("https://ecare.demoquaeretech.in/", "_blank");
+                  }}
+                >
                   Explore product →
-                </button> */}
+                </button>
               </div>
             </article>
           </div>
