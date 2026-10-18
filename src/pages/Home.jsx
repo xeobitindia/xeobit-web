@@ -87,7 +87,7 @@ export default function Home() {
             <div className={styles.heroContent}>
               <div className={styles.eyebrow}>
               <span className={styles.eyebrowDot} />
-              Now available for Gmail
+              Available for Outlook & Gmail
             </div>
               {/* <div
                 className={styles.eyebrowAI}
