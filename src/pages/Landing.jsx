@@ -2,6 +2,7 @@ import React from "react";
 import Logo from "../components/Logo";
 import dashboard from "../assets/Connect_logo.png"
 import learningAi from "../assets/Xeobit_campus_connect.jpeg";
+import assureLogo from "../assets/Xeobit_Assure.png";
 import { useNavigate } from "react-router-dom";
 
 const Landing = () => {
@@ -51,12 +52,12 @@ const Landing = () => {
 
           <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 justify-items-center">
             {/* Product 1 */}
-            <article className="bg-(--bg-card) rounded-lg overflow-hidden shadow-sm">
+            <article className="bg-(--bg-card) rounded-lg overflow-hidden shadow-sm hover:scale-105 duration-300">
               <div className="aspect-video bg-(--accent-light) overflow-hidden">
                 <img
                   src={dashboard}
                   alt="Xeobit Unified Meeting Dashboard"
-                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-95"
+                  className="w-full h-full object-cover transition-transform"
                 />
               </div>
 
@@ -87,12 +88,12 @@ const Landing = () => {
             </article>
 
             {/* Product 2 */}
-            <article className="bg-(--bg-card) rounded-lg overflow-hidden shadow-sm">
+            <article className="bg-(--bg-card) rounded-lg overflow-hidden shadow-sm hover:scale-105 duration-300 ">
               <div className="aspect-video bg-(--accent-light) overflow-hidden">
                 <img
                   src={learningAi}
                   alt="learning ai dashboard"
-                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-95"
+                  className="w-full h-full object-cover transition-transform "
                 />
               </div>
 
@@ -128,13 +129,15 @@ const Landing = () => {
               </div>
             </article>
             {/* Product 3 */}
-            <article className="md:col-span-2 md:w-1/2 md:justify-self-center bg-(--bg-card) rounded-lg overflow-hidden shadow-sm">
+            <article className="bg-(--bg-card) rounded-lg overflow-hidden shadow-sm hover:scale-105 duration-300 ">
               <div className="relative aspect-video bg-(--accent-light) overflow-hidden">
-                <img
-                  src="https://ecare.demoquaeretech.in/brand/ecare-logo.png"
-                  alt="Healthcare AI"
-                  className="w-auto scale-50 hover:scale-45 duration-300"
-                />
+                <div className="bg-white h-full flex items-center">
+                  <img
+                    src="https://ecare.demoquaeretech.in/brand/ecare-logo.png"
+                    alt="Healthcare AI"
+                    className="w-auto"
+                  />
+                </div>
 
                 {/* <span className="absolute inset-0 flex items-center justify-center text-white text-xl font-semibold bg-black/20">
                   Comming Soon
@@ -162,6 +165,48 @@ const Landing = () => {
                 >
                   Explore product →
                 </button>
+              </div>
+            </article>
+            {/* Product 4 */}
+            <article className="bg-(--bg-card) rounded-lg overflow-hidden shadow-sm hover:scale-105 duration-300">
+              <div className="relative aspect-auto bg-(--accent-light) overflow-hidden">
+                <div className="bg-white h-full flex items-center p-8">
+                  <img
+                    src={assureLogo}
+                    alt="Healthcare AI"
+                    className="w-auto"
+                  />
+                </div>
+
+                {/* <span className="absolute inset-0 flex items-center justify-center text-white text-xl font-semibold bg-black/20">
+                  Comming Soon
+                </span> */}
+              </div>
+
+              <div className="p-8">
+                <p className="text-sm uppercase tracking-widest text-(--accent)">
+                  License / AMC Management
+                </p>
+
+                <h3 className="mt-2 text-2xl font-serif font-bold">
+                  Xeobit Assure
+                </h3>
+
+                <p className="mt-3 text-(--ink-soft)">
+                  AV OEMs & System Integrators — generate a unique digital
+                  Warranty/AMC Licence Key for every customer and installation.
+                  Give your customers and SI partners transparent visibility
+                  into coverage, validity and renewals.
+                </p>
+
+                {/* <button
+                  className="mt-6 text-(--accent) font-semibold"
+                  onClick={() => {
+                    window.open("https://ecare.demoquaeretech.in/", "_blank");
+                  }}
+                >
+                  Explore product →
+                </button> */}
               </div>
             </article>
           </div>
