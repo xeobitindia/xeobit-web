@@ -199,14 +199,14 @@ const Landing = () => {
                   into coverage, validity and renewals.
                 </p>
 
-                {/* <button
+                <button
                   className="mt-6 text-(--accent) font-semibold"
                   onClick={() => {
-                    window.open("https://ecare.demoquaeretech.in/", "_blank");
+                    window.open("https://assure.xeobitindia.in/", "_blank");
                   }}
                 >
                   Explore product →
-                </button> */}
+                </button>
               </div>
             </article>
           </div>
