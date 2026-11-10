@@ -3,6 +3,7 @@ import Logo from "../components/Logo";
 import dashboard from "../assets/Connect_logo.png"
 import learningAi from "../assets/Xeobit_campus_connect.jpeg";
 import assureLogo from "../assets/Xeobit_Assure.png";
+import collab from "../assets/XEOBIT_COLLAB.jpeg"
 import { useNavigate } from "react-router-dom";
 
 const Landing = () => {
@@ -207,6 +208,63 @@ const Landing = () => {
                 >
                   Explore product →
                 </button>
+              </div>
+            </article>
+            {/* Product 5 */}
+            <article className="bg-(--bg-card) rounded-lg overflow-hidden shadow-sm hover:scale-105 duration-300">
+              <div className="relative aspect-auto bg-(--accent-light) overflow-hidden">
+                <div className="bg-white h-full flex items-center p-8">
+                  <img
+                    src={collab}
+                    alt="Healthcare AI"
+                    className="w-auto scale-140 ml-10"
+                  />
+                </div>
+
+                {/* <span className="absolute inset-0 flex items-center justify-center text-white text-xl font-semibold bg-black/20">
+                  Comming Soon
+                </span> */}
+              </div>
+
+              <div className="p-8">
+                <p className="text-sm uppercase tracking-widest text-(--accent)">
+                  Meetings / Transcription
+                </p>
+
+                <h3 className="mt-2 text-2xl font-serif font-bold">
+                  Xeobit Collab
+                </h3>
+
+                <p className="mt-3 text-(--ink-soft)">
+                  Xeobit Collab is an intelligent software
+                  solution designed to bring AI-powered capabilities to AV
+                  hardware and meeting room infrastructure. It integrates
+                  directly with a meeting room's AV system to capture audio from
+                  individual microphones registered within the application.
+                  Using real-time speech transcription and microphone-based
+                  speaker identification, it converts meeting conversations into
+                  structured, searchable records. The platform automatically
+                  generates speaker-attributed transcripts, timestamps,
+                  actionable dates, meeting minutes (MoM), and action items,
+                  helping organizations transform everyday meetings into
+                  organized, actionable information.
+                </p>
+
+                {/* <button
+                  className="mt-6 text-(--accent) font-semibold"
+                  onClick={() => {
+                    window.open("https://assure.xeobitindia.in/", "_blank");
+                  }}
+                >
+                  Explore product →
+                </button> */}
+                <p className="text-(--ink-soft) font-bold">
+                  For enquiry -{" "}
+                  <span className="text-(--accent) underline">
+                    {" "}
+                    info@xeobitindia.in{" "}
+                  </span>
+                </p>
               </div>
             </article>
           </div>
